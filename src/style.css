@@ -1,0 +1,148 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* Blue and purple gradient background */
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    cursor: url('cursor.png') 8 8, auto; /* Smaller hotspot for a smaller cursor image */
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    /* Glowing and 3D effect */
+    text-shadow:
+        0 2px 4px #2575fc,
+        0 4px 12px #6a11cb,
+        0 1px 0 #fff,
+        0 0 16px #fff,
+        2px 4px 8px #23243a;
+    font-size: 2.7em;
+    font-weight: bold;
+    transform: perspective(180px) rotateX(8deg);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 28px;
+    box-shadow: 0 8px 32px 0 rgba(106, 17, 203, 0.18);
+    max-width: 600px;
+    width: 98vw;
+    margin: 64px auto;
+    padding: 48px 48px 40px 48px;
+    text-align: center;
+    color: #23243a;
+    border: 2.5px solid #6a11cb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 24px 4vw 24px 4vw;
+        max-width: 99vw;
+    }
+}
+
+input[type="number"] {
+    width: 80%;
+    min-width: 180px;
+    max-width: 320px;
+    padding: 14px;
+    margin: 16px 0;
+    border: 1.5px solid #2575fc;
+    border-radius: 7px;
+    background: #f3f6fd;
+    color: #6a11cb;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px #e0e7ff inset;
+}
+
+input[type="number"]::placeholder {
+    color: #8e9edb;
+    opacity: 0.8;
+}
+
+button,
+.restart-btn {
+    background: transparent;
+    color: #2575fc;
+    font-weight: bold;
+    border: 2px solid #2575fc;
+    border-radius: 7px;
+    padding: 12px 28px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: none;
+    transition: 
+        background 0.2s,
+        color 0.2s,
+        box-shadow 0.2s,
+        border-color 0.2s;
+}
+
+button:hover,
+.restart-btn:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px #b2b6ff;
+    border-color: #6a11cb;
+}
+
+.message {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 1.2em;
+    color: #6a11cb;
+    font-weight: bold;
+    text-shadow: 0 1px 6px #e0e7ff;
+}
+
+.reset {
+    background: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%);
+    color: #fff;
+}
+
+.reset:hover {
+    background: linear-gradient(90deg, #ffc371 0%, #ff5f6d 100%);
+}
+
+/* Remove popup-related styles */
+.popup-hidden,
+#popup,
+.popup-content,
+#closePopup {
+    display: none !important;
+}
+
+.congrats {
+    display: inline-block;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #6a11cb;
+    text-shadow:
+        0 2px 8px #fff,
+        0 4px 24px #2575fc,
+        2px 4px 8px #23243a;
+    margin: 20px 0;
+    letter-spacing: 2px;
+    animation: pop 0.5s;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.7); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.author {
+    margin-top: 18px;
+    font-size: 1em;
+    color: #6a11cb;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
